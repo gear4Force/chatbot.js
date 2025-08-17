@@ -1,0 +1,4 @@
+node_modules/
+export/
+.wwebjs_cache/
+**.js
