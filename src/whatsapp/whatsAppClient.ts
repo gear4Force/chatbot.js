@@ -1,4 +1,4 @@
-import { Client } from "../node_modules/whatsapp-web.js/index.js";
+import { Client } from "../../node_modules/whatsapp-web.js/index.js";
 
 export class WhatsAppClient {
   private static client: Client;
