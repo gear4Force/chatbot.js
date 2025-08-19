@@ -6,7 +6,7 @@ export class WhatsAppEvents {
       console.log("Tudo certo! WhatsApp conectado.");
     });
 
-    client.on("disconnected", (message) => {
+    client.on("disconnected", () => {
       console.log(`CLIENTE DESCONECTADO`);
     });
 
