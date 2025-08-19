@@ -1,6 +1,7 @@
 import { WhatsAppClient } from "./whatsapp/whatsAppClient";
 import { WhatsAppEvents } from "./whatsapp/whatsAppEvents";
 import { WhatsAppClientQrCode } from "./whatsapp/whatsAppClientQrCode";
+import { WhatsAppEventsFunil } from "./whatsapp/whatsAppEventsFunil.ts/whatsAppEventsFunil";
 import express, { Request, Response } from "express";
 
 const app = express();
@@ -9,6 +10,7 @@ const client = WhatsAppClient.getClient();
 
 // Registra os eventos
 WhatsAppEvents.register(client);
+WhatsAppEventsFunil.funil(client);
 
 // Inicializa o client
 WhatsAppClient.initialize();
