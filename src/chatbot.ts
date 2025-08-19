@@ -1,5 +1,6 @@
-import { WhatsAppClient } from "./whatsapp/whatsAppClient.js";
-import { WhatsAppEvents } from "./whatsapp/whatsAppEvents.js";
+import { WhatsAppClient } from "./whatsapp/whatsAppClient";
+import { WhatsAppEvents } from "./whatsapp/whatsAppEvents";
+import { WhatsAppClientQrCode } from "./whatsapp/whatsAppClientQrCode";
 import express, { Request, Response } from "express";
 
 const app = express();
@@ -13,22 +14,21 @@ WhatsAppEvents.register(client);
 WhatsAppClient.initialize();
 
 // Rota que retorna o QR em HTML
-app.get("/", (_req: Request, res: Response) => {
-  const qr = WhatsAppEvents.returnQrCode();
-
-  if (!qr) {
-    res.send("<h2>Aguardando QR Code...</h2>");
-    return;
-  }
-
-  res.send(`
-    <html>
-      <body>
-        <h2>Escaneie o QR Code abaixo:</h2>
-        <img src="data:image/png;base64,${qr}" />
-      </body>
-    </html>
-  `);
+// Precisa ser async pq createQrCode() retorna uma promise
+// a var qrcode é o código qr em String, adapte da melhor forma
+app.get("/", async (req: Request, res: Response) => {
+  const qrcode = await WhatsAppClientQrCode.createQrCode(client);
+  res.send(
+    `
+      <script src="https://cdn.jsdelivr.net/npm/qrcode-generator/qrcode.js"></script>
+        <div id="qrcode"></div>
+      <script>
+      var qr = qrcode(0, 'L'); // versão automática, nível de correção L
+      qr.addData("${qrcode}");
+      qr.make();
+      document.getElementById('qrcode').innerHTML = qr.createImgTag();
+      </script>`
+  );
 });
 
 app.listen(port, () => {

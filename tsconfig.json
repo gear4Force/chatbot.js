@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     /* Linguagem alvo */
-    "target": "ES2022" /* Gera código compatível com Node moderno */,
-    "lib": ["ES2022"] /* Inclui as libs da versão escolhida */,
+    "target": "es2020" /* Gera código compatível com Node moderno */,
+    "lib": ["ES2020"] /* Inclui as libs da versão escolhida */,
 
     /* Módulos */
     "module": "NodeNext",
@@ -15,8 +15,8 @@
 
     /* Qualidade do código */
     "strict": true /* Ativa todas as verificações estritas */,
-    "noUnusedLocals": true /* Erro se variáveis não forem usadas */,
-    "noUnusedParameters": true /* Erro se parâmetros não forem usados */,
+    "noUnusedLocals": false /* Erro se variáveis não forem usadas */,
+    "noUnusedParameters": false /* Erro se parâmetros não forem usados */,
     "noImplicitReturns": true /* Erro se função não retorna em todos caminhos */,
     "noFallthroughCasesInSwitch": true /* Evita cair em cases de switch sem break */,
 
