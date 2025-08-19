@@ -11,4 +11,3 @@ código de bot whatsapp reacriado em Typescript, divido em funções (Client e E
 
 - whatsapp-web.js - https://docs.wwebjs.dev/index.html // Conexão com whatsApp
 - Expressjs - https://expressjs.com/ // Cria o servidor web local na porta 3000
-- QrCode-terminal - https://www.npmjs.com/package/qrcode-terminal //gerador de QRCode
