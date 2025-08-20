@@ -4,6 +4,15 @@
     "target": "es2020" /* Gera código compatível com Node moderno */,
     "lib": ["ES2020"] /* Inclui as libs da versão escolhida */,
 
+    //serve pra oorganizar os códigos
+    //se importa assim:
+    //import { UserService } from "@services/user.service";
+    "baseUrl": ".",
+    "paths": {
+      "@funil/*": ["./src/whatsapp/*"],
+      "@services/*": ["./src/models/*"]
+    },
+
     /* Módulos */
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
@@ -24,6 +33,6 @@
     "removeComments": true /* Remove comentários nos .js */,
     "skipLibCheck": true /* Pula checagem de libs (mais rápido) */
   },
-  "include": ["./**/*.ts"],
+  "include": ["./**/*.ts", "src/whatsapp/whatsAppEventsFunil"],
   "exclude": ["node_modules", "export"]
 }

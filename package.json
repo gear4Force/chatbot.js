@@ -2,7 +2,7 @@
   "scripts": {
     "start": "node dist/chatbot.js",
     "build": "tsc",
-    "dev": "ts-node src/chatbot.ts"
+    "dev": "ts-node src/index.ts"
   },
   "dependencies": {
     "express": "^5.1.0",

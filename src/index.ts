@@ -1,7 +1,7 @@
-import { WhatsAppClient } from "./whatsapp/whatsAppClient";
-import { WhatsAppEvents } from "./whatsapp/whatsAppEvents";
-import { WhatsAppClientQrCode } from "./whatsapp/whatsAppClientQrCode";
-import { WhatsAppEventsFunil } from "./whatsapp/whatsAppEventsFunil.ts/whatsAppEventsFunil";
+import { WhatsAppClient } from "./whatsapp/services/whatsAppClient";
+import { WhatsAppEvents } from "./whatsapp/services/whatsAppEvents";
+import { WhatsAppClientQrCode } from "./whatsapp/services/whatsAppClientQrCode";
+import { WhatsAppEventsFunil } from "./whatsapp/whatsAppEventsFunil/whatsAppEventsFunil";
 import express, { Request, Response } from "express";
 
 const app = express();
